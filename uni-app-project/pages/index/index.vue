@@ -1,52 +1,43 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
-	</view>
+	<swiper class="banner" indicator-dots circular :autoplay="false">
+		<swiper-item v-for="(item,index) in picture" :key="item.id">
+			<img @tap="onPreviewImage(item.url)" :src="item.url" alt="">
+		</swiper-item>
+	</swiper>
 </template>
 
 <script>
 	export default {
 		data() {
 			return {
-				title: 'Hello uni-app'
+				picture:[
+					{id:'1', url:"https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/uploads/goods_preview_1.jpg"},
+					{id:'1', url:"https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/uploads/goods_preview_2.jpg"},
+					{id:'1', url:"https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/uploads/goods_preview_3.jpg"},
+					{id:'1', url:"https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/uploads/goods_preview_4.jpg"},
+					{id:'1', url:"https://pcapi-xiaotuxian-front-devtest.itheima.net/miniapp/uploads/goods_preview_5.jpg"},
+				]
 			}
 		},
 		onLoad() {
 
 		},
 		methods: {
-
+			onPreviewImage(url){
+				uni.previewImage({
+					urls:this.picture.map(v=>v.url),
+					current:url
+				})
+			}
 		}
 	}
 </script>
 
 <style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
+	.banner,
+	.banner image
+	{
+		width: 750rpx;
+		height: 750rpx;
 	}
 </style>
