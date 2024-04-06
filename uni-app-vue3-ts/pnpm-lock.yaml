@@ -70,12 +70,18 @@ devDependencies:
   '@dcloudio/vite-plugin-uni':
     specifier: 3.0.0-4000720240327002
     version: 3.0.0-4000720240327002(postcss@8.4.38)(vite@4.3.5)(vue@3.4.21)
+  '@uni-helper/uni-app-types':
+    specifier: ^0.5.12
+    version: 0.5.12(typescript@4.9.5)
   '@vue/runtime-core':
     specifier: ^3.3.11
     version: 3.4.21
   '@vue/tsconfig':
     specifier: ^0.1.3
     version: 0.1.3
+  miniprogram-api-typings:
+    specifier: ^3.12.2
+    version: 3.12.2
   typescript:
     specifier: ^4.9.4
     version: 4.9.5
@@ -2971,6 +2977,17 @@ packages:
       '@types/yargs-parser': 21.0.3
     dev: true
 
+  /@uni-helper/uni-app-types@0.5.12(typescript@4.9.5):
+    resolution: {integrity: sha512-SeUEgDgGftI4XEp1AB3C6IFLnRPT83tgTCCmlLUBmQyHh+UhRY+CX4QtgQ0n/kF8txNUq8Bc9YwKlYdXQGx6Ww==}
+    engines: {node: '>=14.18'}
+    peerDependencies:
+      typescript: ^4.8.0 || ^5.0.0
+    dependencies:
+      '@dcloudio/types': 3.4.8
+      typescript: 4.9.5
+      vue3: /vue@3.4.21(typescript@4.9.5)
+    dev: true
+
   /@vitejs/plugin-legacy@4.1.1(terser@5.30.3)(vite@4.3.5):
     resolution: {integrity: sha512-um3gbVouD2Q/g19C0qpDfHwveXDCAHzs8OC3e9g6aXpKoD1H14himgs7wkMnhAynBJy7QqUoZNAXDuqN8zLR2g==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -5284,6 +5301,10 @@ packages:
   /minimist@1.2.8:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
     dev: false
+
+  /miniprogram-api-typings@3.12.2:
+    resolution: {integrity: sha512-OJB2uVAfhycX4teG/zEVpoThushQqLOx946XACDpVc6OQydiJWjn7djVzvNCbv0VOA7sbHGPQp/RkXD9vMCDEw==}
+    dev: true
 
   /mkdirp@0.5.6:
     resolution: {integrity: sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==}
